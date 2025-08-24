@@ -23,7 +23,7 @@ type Repository struct {
 }
 
 func (r *Repository) CreateBook(context *fiber.Ctx) error {
-	body := Book{}
+	body := models.Books{}
 	err := context.BodyParser(&body)
 	if err != nil {
 		context.Status(http.StatusUnprocessableEntity).JSON(&fiber.Map{"error": "request failed"})
